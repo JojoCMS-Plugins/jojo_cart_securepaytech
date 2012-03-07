@@ -24,6 +24,9 @@
     <label for="securepaytech_cardName">Name on card</label>
     <input type="text" size="30" name="cardName" id="securepaytech_cardName" value="{if $OPTIONS.cart_test_mode=='yes'}Test Cardholder{/if}" autocomplete="off" /><br />
     
+    <label for="securepaytech_CSC">Card Security Code</label>
+    <input type="text" size="5" name="CSC" id="securepaytech_CSC" value="{if $OPTIONS.cart_test_mode=='yes'}100{/if}" autocomplete="off" /><br />
+    
   </div>
 
 <div style="text-align: center;"><input type="image" src="images/btn-pay-now.gif" name="pay" id="pay" value="Pay by Credit card" onclick="if (validateSecurePayTech()){ldelim}$('#securepaytech_pay').attr('disabled',true);$('#securepaytech_form').submit();{rdelim}else{ldelim}return false;{rdelim}" /></div>
