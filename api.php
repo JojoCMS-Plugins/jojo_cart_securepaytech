@@ -78,3 +78,14 @@ $_options[] = array(
     'options'     => '',
     'plugin'      => 'jojo_cart_securepaytech'
 );
+
+$_options[] = array(
+    'id'          => 'securepaytech_use_csc',
+    'category'    => 'Cart',
+    'label'       => 'SecurePayTech use CSC',
+    'description' => 'Require the customer to enter a CSC number when making payments. This must be configured with SecurePayTech.',
+    'type'        => 'radio',
+    'default'     => 'no',
+    'options'     => 'yes,no',
+    'plugin'      => 'jojo_cart_securepaytech'
+);

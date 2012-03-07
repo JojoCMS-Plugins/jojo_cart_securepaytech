@@ -23,9 +23,10 @@
     
     <label for="securepaytech_cardName">Name on card</label>
     <input type="text" size="30" name="cardName" id="securepaytech_cardName" value="{if $OPTIONS.cart_test_mode=='yes'}Test Cardholder{/if}" autocomplete="off" /><br />
-    
+    {if $OPTIONS.securepaytech_use_csc=='yes'}
     <label for="securepaytech_CSC">Card Security Code</label>
     <input type="text" size="5" name="CSC" id="securepaytech_CSC" value="{if $OPTIONS.cart_test_mode=='yes'}100{/if}" autocomplete="off" /><br />
+    {/if}
     
   </div>
 

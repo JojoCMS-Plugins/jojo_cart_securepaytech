@@ -124,9 +124,11 @@ class jojo_plugin_jojo_cart_securepaytech extends JOJO_Plugin
                          'MerchantKey'    => $merchantKey,
                          'Amount'         => $amount,
                          'Currency'       => _SECUREPAYTECH_CURRENCY,
-                         'EnableCSC'      => 'true',
-                         'CSC'            => Jojo::getFormData('CSC', '')
                     );
+      if (Jojo::getOption('securepaytech_use_csc', 'no') == 'yes') {
+          $postvars['EnableCSC'] = 'true';
+          $postvars['CSC']       = Jojo::getFormData('CSC', '');
+      }
 
       /* error checking */
       $response = explode(',', jojo_plugin_jojo_cart_securepaytech::http_post("https", "tx.securepaytech.com", 8443, "/web/HttpPostPurchase", $postvars));
